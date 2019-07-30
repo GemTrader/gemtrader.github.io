@@ -20,11 +20,11 @@
 
 <body>
 
-
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 
   <header>
     <div class="hero">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="javascript:void(0);" onclick="loadOne();">
         <img src="img/logo.png" alt="">
       </a>
 
@@ -33,13 +33,13 @@
           <div class="hero__slide">
             <img src="img/map1.jpg" alt="">
             <div class="hero__slideContent text-center">
-              <h1 id="role_name">维斯特</h1>
+              <h1 class="role_name" id="role_name">aaa</h1>
               <div class="gem_div1">
-                <img id="role_img" src="img/role_img/10007.png">
-                <p id="role_char">扮演者：玛格丽特</p>
+                <img class="role_img" id="role_img" src="img/role_img/10007.png">
+                <p class="role_char" id="role_char">扮演者：玛格丽特</p>
               </div>
               <div class="gem_div2">
-                <p id="role_desc">好像是来度假的外乡女子，身材高挑，容貌秀美，在镇上格外的引人注目。但据酒吧老板说看见过她喝多以后进了男厕所“现在的年轻人似乎太不检点了呢...”</p>
+                <p class="role_desc" id="role_desc">好像是来度假的外乡女子，身材高挑，容貌秀美，在镇上格外的引人注目。但据酒吧老板说看见过她喝多以后进了男厕所“现在的年轻人似乎太不检点了呢...”</p>
               </div>
 
             </div>
@@ -64,7 +64,7 @@
   </footer>
 
 
-  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
   <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="vendor/owl-carousel/owl.carousel.min.js"></script>
 
@@ -111,6 +111,25 @@
     $(".toggle_icon").on('click', function() {
       $('body').toggleClass("open");
     });
+  </script>
+  <script>
+    function loadOne() {
+      $.ajax({
+        url: "img/res.json",
+        type: "GET",
+        dataType: "json",
+        async: false,
+        success: function(data) {
+          window.r_res = data[Math.floor((Math.random() * data.length))];
+          // alert(window.r_res.name);
+          $('.role_name').html(window.r_res.name);
+          $('.role_char').html(window.r_res.player);
+          $('.role_desc').text(window.r_res.desc);
+          $('.role_img').attr("src", "img/" + window.r_res.res);
+        }
+      })
+    }
+    loadOne();
   </script>
 </body>
 
