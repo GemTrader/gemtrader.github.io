@@ -19,8 +19,16 @@
 </head>
 
 <body>
-
+  <div id="loading"></div>
   <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script>
+    function hideLoader() {
+      $('#loading').hide();
+    }
+    $(window).ready(hideLoader);
+    // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+    setTimeout(hideLoader, 20 * 1000);
+  </script>
 
   <header>
     <div class="hero">
@@ -33,7 +41,7 @@
           <div class="hero__slide">
             <img src="img/map1.jpg" alt="">
             <div class="hero__slideContent text-center">
-              <h1 class="role_name" id="role_name">aaa</h1>
+              <h1 class="role_name" id="role_name">维也纳</h1>
               <div class="gem_div1">
                 <img class="role_img" id="role_img" src="img/role_img/10007.png">
                 <p class="role_char" id="role_char">扮演者：玛格丽特</p>
@@ -69,6 +77,47 @@
   <script src="vendor/owl-carousel/owl.carousel.min.js"></script>
 
   <script>
+    function loadOne() {
+      $.ajax({
+        url: "img/res.json",
+        type: "GET",
+        dataType: "json",
+        async: true,
+        success: function(data) {
+          window.r_res = data[Math.floor((Math.random() * data.length))];
+          // alert(window.r_res.name);
+          $('.role_name').html(window.r_res.name);
+          $('.role_char').html(window.r_res.player);
+          $('.role_desc').text(window.r_res.desc);
+          // $('.role_img').attr("src", "img/" + window.r_res.res);
+          imgPath = "img/" + window.r_res.res;
+          $('.role_img').attr("src", "img/loading.gif");
+          var imgPreload = new Image();
+          $(imgPreload).attr({
+            src: imgPath
+          });
+          //check if the image is already loaded (cached):
+          if (imgPreload.complete || imgPreload.readyState === 4) {
+            $('.role_img').attr("src", imgPath);
+          } else {
+            //go fetch the image:
+            $(imgPreload).on('load', function(response, status, xhr) {
+              if (status == 'error') {
+                //image could not be loaded:
+              } else {
+                //image loaded:
+                //your code here to insert image into page
+                $('.role_img').attr("src", imgPath);
+              }
+            });
+          }
+        }
+      })
+    }
+    loadOne();
+  </script>
+
+  <script>
     var testimonialCarousel = $('.testimonialCarousel');
     testimonialCarousel.owlCarousel({
       loop: true,
@@ -94,12 +143,16 @@
       nav: false,
       startPosition: 1,
       responsiveClass: true,
+      afterAction: loadOne,
       responsive: {
         0: {
           items: 1
         }
       }
     });
+    heroCarousel.on('dragged.owl.carousel', function(event) {
+      loadOne();
+    })
 
     var dropToggle = $('.menu_right > li').has('ul').children('a');
     dropToggle.on('click', function() {
@@ -112,25 +165,7 @@
       $('body').toggleClass("open");
     });
   </script>
-  <script>
-    function loadOne() {
-      $.ajax({
-        url: "img/res.json",
-        type: "GET",
-        dataType: "json",
-        async: false,
-        success: function(data) {
-          window.r_res = data[Math.floor((Math.random() * data.length))];
-          // alert(window.r_res.name);
-          $('.role_name').html(window.r_res.name);
-          $('.role_char').html(window.r_res.player);
-          $('.role_desc').text(window.r_res.desc);
-          $('.role_img').attr("src", "img/" + window.r_res.res);
-        }
-      })
-    }
-    loadOne();
-  </script>
+
 </body>
 
 </html>
