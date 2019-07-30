@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "model": "model.css",
+  "textures": [
+		"model.1024/texture_00.png"
+	],
+  "layout":
+	{
+		"center_x":0.48,
+		"center_y":-0.063,
+		"width":1.25
+	},
+  "hit_areas_custom": {
+    "head_x": [-0.35, 0.6],
+    "head_y": [0.19, -0.2],
+    "body_x": [-0.3, -0.25],
+    "body_y": [0.3, -0.9]
+  },
+  "motions": {
+    "idle": [{
+      "file": "motions/daiji.css"
+    }],
+    "sleepy": [{
+      "file": "motions/daiji.css"
+    }],
+    "flick_head": [{
+        "file": "motions/dianji.css"
+      },
+      {
+        "file": "motions/dianji2.css"
+      },
+      {
+        "file": "motions/dianji3.css"
+      },
+      {
+        "file": "motions/motou.css"
+      },
+      {
+        "file": "motions/motou2.css"
+      },
+      {
+        "file": "motions/motou3.css"
+      }
+    ],
+    "tap_body": [{
+        "file": "motions/mogu1.css"
+      },
+      {
+        "file": "motions/mogu2.css"
+      }
+    ],
+    "": [{
+        "file": "motions/daiji.css"
+      },
+      {
+        "file": "motions/dianji.css"
+      },
+      {
+        "file": "motions/dianji2.css"
+      },
+      {
+        "file": "motions/dianji3.css"
+      },
+      {
+        "file": "motions/motou.css"
+      },
+      {
+        "file": "motions/motou2.css"
+      },
+      {
+        "file": "motions/motou3.css"
+      },
+      {
+        "file": "motions/mogu1.css"
+      },
+      {
+        "file": "motions/mogu2.css"
+      },
+      {
+        "file": "motions/mogu3.css"
+      },
+      {
+        "file": "motions/mogu4.css"
+      }
+    ]
+  }
+}

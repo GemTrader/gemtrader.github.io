@@ -1,0 +1,77 @@
+{
+  "version": "1.0.0",
+  "model": "model.css",
+  "textures": [
+    "model.2048/texture_00.png"
+  ],
+  "layout": {
+    "center_x": -0.05,
+    "center_y": -0.25,
+    "width": 0.32
+  },
+  "hit_areas_custom": {
+    "head_x": [-0.35, 0.6],
+    "head_y": [0.19, -0.2],
+    "body_x": [-0.3, -0.25],
+    "body_y": [0.3, -0.9]
+  },
+  "motions": {
+    "idle": [{
+      "file": "motions/idle_1.css"
+    }],
+    "sleepy": [{
+      "file": "motions/idle_2.css"
+    }],
+    "flick_head": [{
+        "file": "motions/dianji_1.css"
+      },
+      {
+        "file": "motions/dianji_2.css"
+      },
+      {
+        "file": "motions/unlock2.css"
+      }
+    ],
+    "tap_body": [{
+        "file": "motions/move_1.css"
+      },
+      {
+        "file": "motions/move_2.css"
+      },
+      {
+        "file": "motions/move2_1.css"
+      },
+      {
+        "file": "motions/move2_2.css"
+      }
+    ],
+    "": [{
+        "file": "motions/idle_1.css"
+      },
+      {
+        "file": "motions/idle_2.css"
+      },
+      {
+        "file": "motions/dianji_1.css"
+      },
+      {
+        "file": "motions/dianji_2.css"
+      },
+      {
+        "file": "motions/unlock2.css"
+      },
+      {
+        "file": "motions/move_1.css"
+      },
+      {
+        "file": "motions/move_2.css"
+      },
+      {
+        "file": "motions/move2_2.css"
+      },
+      {
+        "file": "motions/move2_1.css"
+      }
+    ]
+  }
+}

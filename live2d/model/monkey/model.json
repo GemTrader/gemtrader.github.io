@@ -6,8 +6,8 @@
     "model.2048/texture_01.png"
   ],
   "layout": {
-    "center_x": 0.0,
-    "center_y": -0.20,
+    "center_x": 0,
+    "center_y": -0.212,
     "width": 1.76
   },
   "hit_areas_custom": {
@@ -18,7 +18,7 @@
   },
   "motions": {
     "idle": [{
-      "file": "motions/idle1.css"
+      "file": "motions/idle.css"
     }],
     "sleepy": [{
       "file": "motions/idle2.css"
@@ -30,48 +30,54 @@
         "file": "motions/dianji2.css"
       },
       {
-        "file": "motions/dianji3.css"
+        "file": "motions/dianji3_2.css"
       }
     ],
     "tap_body": [{
+        "file": "motions/dianji3_3.css"
+      },
+      {
+        "file": "motions/dianji3_1.css"
+      },
+      {
         "file": "motions/dianji4.css"
       },
       {
-        "file": "motions/dianji5.css"
+        "file": "motions/tou1.css"
       },
       {
-        "file": "motions/dianji6.css"
-      },
-      {
-        "file": "motions/dianji7.css"
+        "file": "motions/tou2.css"
       }
     ],
     "": [{
-        "file": "motions/idle1.css"
+        "file": "motions/idle.css"
       },
       {
         "file": "motions/idle2.css"
       },
       {
-        "file": "motions/dianji7.css"
+        "file": "motions/tou1.css"
       },
       {
-        "file": "motions/dianji6.css"
+        "file": "motions/tou2.css"
       },
       {
-        "file": "motions/dianji5.css"
+        "file": "motions/dianji3_1.css"
       },
       {
         "file": "motions/dianji4.css"
       },
       {
-        "file": "motions/dianji3.css"
+        "file": "motions/dianji3_2.css"
       },
       {
         "file": "motions/dianji2.css"
       },
       {
         "file": "motions/dianji1.css"
+      },
+      {
+        "file": "motions/dianji3_3.css"
       }
     ]
   }

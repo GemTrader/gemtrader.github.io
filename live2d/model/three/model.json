@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "model": "model.css",
+  "textures": [
+    "model.2048/texture_00.png",
+    "model.2048/texture_01.png"
+  ],
+  "layout": {
+    "center_x": 0.0,
+    "center_y": -0.19,
+    "width": 1.76
+  },
+  "hit_areas_custom": {
+    "head_x": [-0.35, 0.6],
+    "head_y": [0.19, -0.2],
+    "body_x": [-0.3, -0.25],
+    "body_y": [0.3, -0.9]
+  },
+  "motions": {
+    "idle": [{
+      "file": "motions/idle.css"
+    }],
+    "sleepy": [{
+      "file": "motions/suiji.css"
+    }],
+    "flick_head": [{
+        "file": "motions/dianji.css"
+      }
+    ],
+    "tap_body": [{
+        "file": "motions/dianji.css"
+      }
+    ],
+    "": [{
+        "file": "motions/idle.css"
+      },
+      {
+        "file": "motions/suiji.css"
+      },
+      {
+        "file": "motions/dianji.css"
+      }
+    ]
+  }
+}
