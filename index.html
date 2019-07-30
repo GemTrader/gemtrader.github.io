@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GemTrader</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300i,400,500" rel="stylesheet">
+
+  <link rel="stylesheet" href="vendor/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link rel="stylesheet" href="vendor/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="vendor/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+
+  <header>
+    <div class="hero">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="">
+      </a>
+
+      <div class="owl-carousel owl-theme heroCarousel">
+        <div class="item">
+          <div class="hero__slide">
+            <img src="img/map1.jpg" alt="">
+            <div class="hero__slideContent text-center">
+              <h1 id="role_name">维斯特</h1>
+              <div class="gem_div1">
+                <img id="role_img" src="img/role_img/10007.png">
+                <p id="role_char">扮演者：玛格丽特</p>
+              </div>
+              <div class="gem_div2">
+                <p id="role_desc">好像是来度假的外乡女子，身材高挑，容貌秀美，在镇上格外的引人注目。但据酒吧老板说看见过她喝多以后进了男厕所“现在的年轻人似乎太不检点了呢...”</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <footer class="footer footer-bg">
+    <div class="container">
+
+      <div class="d-sm-flex justify-content-between footer__bottom top-border">
+        <p>
+          Copyright &copy;<script>
+            document.write(new Date().getFullYear());
+          </script> All rights reserved.</p>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendor/owl-carousel/owl.carousel.min.js"></script>
+
+  <script>
+    var testimonialCarousel = $('.testimonialCarousel');
+    testimonialCarousel.owlCarousel({
+      loop: true,
+      margin: 80,
+      startPosition: 2,
+      nav: false,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        1000: {
+          items: 2,
+          loop: true
+        }
+      }
+    });
+
+    var heroCarousel = $('.heroCarousel');
+    heroCarousel.owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: false,
+      startPosition: 1,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1
+        }
+      }
+    });
+
+    var dropToggle = $('.menu_right > li').has('ul').children('a');
+    dropToggle.on('click', function() {
+      dropToggle.not(this).closest('li').find('ul').slideUp(200);
+      $(this).closest('li').children('ul').slideToggle(200);
+      return false;
+    });
+
+    $(".toggle_icon").on('click', function() {
+      $('body').toggleClass("open");
+    });
+  </script>
+</body>
+
+</html>
